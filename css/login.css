@@ -1,3 +1,13 @@
+:root {
+    --color-1: #234015;
+    --color-2: #19260F;
+    --color-3: #465938;
+    --color-4: #9EA697;
+    --color-5: #E9F2DF;
+    --color-blanco-1: #fff;
+    --color-blanco-2: #efefef;
+}
+
 /* Reset CSS básico */
 *  {
     margin: 0;
@@ -8,14 +18,14 @@
 body {
     display: grid;
     min-height: 100dvh;
-    grid-template-rows: 
+    grid-template-rows:
     auto 1fr auto;
     font-family: "Nunito", sans-serif;
-    background-color: #fff59d;
+    background-color: var(--color-5);
 }
 
 .header{
-    background-color: #1b3039;
+    background-color: var(--color-1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,15 +33,26 @@ body {
     padding: 5px 10px;
 }
 
-.header .logo{
+.header .logo {
     cursor: pointer;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.header .logo img{
-    height: 70px;
-    width: auto;
+.header .logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     transition: all 0.3s;
 }
+
 
 .header .logo img:hover{
     transform: scale(1.2);
@@ -51,13 +72,20 @@ body {
 }
 
 .header .nav-links a{
-    font-size: 700;
-    color: #eceff1;
+    font-weight: 700;
+    color: var(--color-blanco-2);
     text-decoration:  none;
 }
 
 .header .nav-links li a:hover{
-    color: #ffbc09;
+    color: var(--color-blanco-1);
+}
+
+.contentButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .header .btn button {
@@ -75,5 +103,62 @@ body {
     background-color: #e2f1f8;
     color: #ffbc0e;
     transform: scale(1.1);
+}
+
+.btnNav {
+    display: none;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btnNav:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+@media (max-width: 665px) {
+    nav {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        height: calc(100dvh - 85px);
+        background-color: #1b3039;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .nav-links li {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .btnNav {
+        display: block;
+    }
 }
 
