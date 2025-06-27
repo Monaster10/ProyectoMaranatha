@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maranatha</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <!--Link de Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +33,25 @@
         </div>
     </header>
 
-    <main>Main</main>
+    <main>
+        <section class="sectionLogin">
+            <img class="avatar" src="../img/MaranathaLogo.png" alt="logo">
+            <h2>Iniciar sesion</h2>
+            <form action="">
+                <label for="usuario">Usuario</label>
+                <input type="text" placeholder="Ingrese su usuario" name="usuario" id="">
+                
+                <label for="password">Contraseña</label>
+                <input type="password" placeholder="Ingrese su contraseña  " name="password" id="">
+
+                <button class="btnIngresar" type="submit">Ingresar</button>
+                
+                <a href="">¿Olvidaste tu contraseña?</a><br>
+                <a href="">Registrarse</a>
+
+            </form>
+        </section>
+    </main>
 
     <footer>Footer</footer>
     <script src="../js/login.js"></script>
